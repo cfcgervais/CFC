@@ -1,47 +1,50 @@
-var playerService = new PlayerService
-var players = playerService.players
+var playerService = new PlayerService();
+Roster();
 
-function myStartingEleven(players){
-    var myEleven = [];
-    var template = ''
-    for(i = 0; players.length; i++){
-        var player = players[i]
+var roster = [];
+var myEleven = [];
+
+function Roster(){
+    var players = playerService.getPlayers();
+    var rosterElem = $('#player-list');
+    
+    var template = '';
+    for(i = 0; i < players.length; i++){
+        var player = players[i];
+        template += `<span id="${player.name}"><button class="btn-success" id="${player.name}">Add</button> ${player.name}<br></span>`
         }
-        template = `<div class="container-fluid">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <ul>
-                                    <li>${player.name}</li>
-                            
-                                </ul>
-                            </div>
-                            <div class="col-xs-6">
-                                <div class="card">
-                                    <div id="soccerfield">
-                                        <div id="infield">
-                                            <div id="left">
-                                            <div class="penaltybox">
-                                                <div class="goalbox"></div>
-                                                <div class="penaltyspot"></div>
-                                            </div>
-                                            <div class="penaltyarc"></div>
-                                            </div>
-                                            <div id="halfwayline"></div>
-                                            <div id="centercircle">
-                                            <div id="centerspot"></div>
-                                            </div>
-                                            <div id="right">
-                                            <div class="penaltybox">
-                                                <div class="goalbox"></div>
-                                                <div class="penaltyspot"></div>
-                                            </div>
-                                            <div class="penaltyarc"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`
-
+    rosterElem.html(template);
+    $('#player-list').on('click','button',function(){
+        myEleven.push(this.id)
+        myStartingEleven(myEleven);
+    });
 }
+    
+function myStartingEleven(myEleven){
+    var players = playerService.getPlayers();
+    var playerElem = $('#my-list');
+    var template = '';
+    for(i = 0; i < myEleven.length; i++){
+        var myPlayer = myEleven[i];
+        template += `<span id="${myPlayer}">${myPlayer}<br></span>`
+        if(myEleven.length > 11){
+            return
+        }
+    }
+    playerElem.html(template);
+}    
+   
+        
+        
+  
+
+
+        
+        
+
+    
+        
+    
+
+    
+    
