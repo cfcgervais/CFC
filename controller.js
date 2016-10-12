@@ -26,7 +26,7 @@ function myStartingEleven(myEleven){
     var template = '';
     for(i = 0; i < myEleven.length; i++){
         var myPlayer = myEleven[i];
-        template += `<span id="${myPlayer}">${myPlayer}<br></span>`
+        template += `<h4 id="${myPlayer}">${myPlayer}</h4>`
         if(myEleven.length > 11){
             return
         }
