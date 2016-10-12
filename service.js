@@ -1,17 +1,5 @@
 function PlayerService(){
     var players = [{
-        name: 'Willian',
-        position: 'RW',
-        jersey: 22,
-        age: 28,
-        nationality: 'Brazil',
-    },{
-        name: 'Eden Hazard',
-        position: 'LW',
-        jersey: 10,
-        age: 25,
-        nationality: 'Belgium',
-    },{
         name: 'Thibaut Courtios',
         position: 'GK',
         jersey: 13,
@@ -132,6 +120,18 @@ function PlayerService(){
         age: 29,
         nationality: 'Spain',
     },{
+        name: 'Willian',
+        position: 'RW',
+        jersey: 22,
+        age: 28,
+        nationality: 'Brazil',
+    },{
+        name: 'Eden Hazard',
+        position: 'LW',
+        jersey: 10,
+        age: 25,
+        nationality: 'Belgium',
+    },{
         name: 'Michy Batshuayi',
         position: 'ST',
         jersey: 23,
@@ -150,6 +150,8 @@ function PlayerService(){
         age: 19,
         nationality: 'England',
     }];
+    
+    
     this.getPlayers = function() {
         return players;
     }
