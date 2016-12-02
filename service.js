@@ -5,6 +5,7 @@ function PlayerService(){
         jersey: 13,
         age: 24,
         nationality: 'Belgium',
+        pos: 0,
     },{
         name: 'Asmir Begovic',
         position: 'GK',
